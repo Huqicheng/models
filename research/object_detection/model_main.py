@@ -25,6 +25,14 @@ import tensorflow as tf
 from object_detection import model_hparams
 from object_detection import model_lib
 
+def del_all_flags(FLAGS):
+    flags_dict = FLAGS._flags()    
+    keys_list = [keys for keys in flags_dict]    
+    for keys in keys_list:    
+        FLAGS.__delattr__(keys)
+
+del_all_flags(tf.app.flags.FLAGS)
+
 flags.DEFINE_string(
     'model_dir', None, 'Path to output model directory '
     'where event and checkpoint files will be written.')
