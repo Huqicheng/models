@@ -74,6 +74,7 @@ del_all_flags(tf.app.flags.FLAGS)
 tf.logging.set_verbosity(tf.logging.INFO)
 
 flags = tf.app.flags
+flags.DEFINE_boolean('logtostderr', True, 'logtostderr')
 flags.DEFINE_string('master', '', 'BNS name of the TensorFlow master to use.')
 flags.DEFINE_integer('task', 0, 'task id')
 flags.DEFINE_integer('num_clones', 1, 'Number of clones to deploy per worker.')
