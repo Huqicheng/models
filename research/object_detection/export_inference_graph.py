@@ -108,6 +108,8 @@ def del_all_flags(FLAGS):
 
 del_all_flags(flags.FLAGS)
 
+flags.DEFINE_boolean('logtostderr', False,
+                     '122323')
 flags.DEFINE_string('input_type', 'image_tensor', 'Type of input node. Can be '
                     'one of [`image_tensor`, `encoded_image_string_tensor`, '
                     '`tf_example`]')
