@@ -98,6 +98,15 @@ from object_detection.protos import pipeline_pb2
 
 slim = tf.contrib.slim
 flags = tf.app.flags
+####Delete all flags before declare#####
+
+def del_all_flags(FLAGS):
+    flags_dict = FLAGS._flags()    
+    keys_list = [keys for keys in flags_dict]    
+    for keys in keys_list:    
+      FLAGS.__delattr__(keys)
+
+del_all_flags(flags.FLAGS)
 
 flags.DEFINE_string('input_type', 'image_tensor', 'Type of input node. Can be '
                     'one of [`image_tensor`, `encoded_image_string_tensor`, '
