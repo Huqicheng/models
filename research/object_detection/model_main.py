@@ -29,7 +29,7 @@ def del_all_flags(FLAGS):
     flags_dict = FLAGS._flags()    
     keys_list = [keys for keys in flags_dict]    
     for keys in keys_list:
-        if keys == 'logtostderr':
+        if keys != 'logtostderr':
             FLAGS.__delattr__(keys)
 
 del_all_flags(tf.app.flags.FLAGS)
