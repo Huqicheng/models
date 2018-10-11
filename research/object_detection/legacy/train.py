@@ -60,6 +60,17 @@ from object_detection.protos import model_pb2
 from object_detection.protos import pipeline_pb2
 from object_detection.protos import train_pb2
 
+
+####Delete all flags before declare#####
+
+def del_all_flags(FLAGS):
+    flags_dict = FLAGS._flags()    
+    keys_list = [keys for keys in flags_dict]    
+    for keys in keys_list:    
+    FLAGS.__delattr__(keys)
+
+del_all_flags(tf.app.flags.FLAGS)
+
 tf.logging.set_verbosity(tf.logging.INFO)
 
 flags = tf.app.flags
