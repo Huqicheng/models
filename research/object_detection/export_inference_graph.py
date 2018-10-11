@@ -99,6 +99,7 @@ from object_detection.protos import pipeline_pb2
 slim = tf.contrib.slim
 flags = tf.app.flags
 ####Delete all flags before declare#####
+tf.reset_default_graph()
 
 def del_all_flags(FLAGS):
     flags_dict = FLAGS._flags()    
