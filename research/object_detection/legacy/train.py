@@ -60,7 +60,7 @@ def del_all_flags(FLAGS):
     keys_list = [keys for keys in flags_dict]    
     for keys in keys_list:    
         FLAGS.__delattr__(keys)
-del_all_flags(tf.app.flags)
+del_all_flags(tf.app.flags.FLAGS)
 
 flags = tf.app.flags
 flags.DEFINE_string('master', '', 'Name of the TensorFlow master to use.')
