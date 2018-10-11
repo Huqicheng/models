@@ -70,6 +70,7 @@ flags.DEFINE_boolean('clone_on_cpu', False,
                      'Force clones to be deployed on CPU.  Note that even if '
                      'set to False (allowing ops to run on gpu), some ops may '
                      'still be run on the CPU if they have no GPU kernel.')
+flags.DEFINE_boolean('logtostderr', False, "shit")
 flags.DEFINE_integer('worker_replicas', 1, 'Number of worker+trainer '
                      'replicas.')
 flags.DEFINE_integer('ps_tasks', 0,
