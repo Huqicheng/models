@@ -33,7 +33,7 @@ def del_all_flags(FLAGS):
             FLAGS.__delattr__(keys)
 
 del_all_flags(tf.app.flags.FLAGS)
-
+flags.DEFINE_boolean('logtostderr', False, "d")
 flags.DEFINE_string(
     'model_dir', None, 'Path to output model directory '
     'where event and checkpoint files will be written.')
